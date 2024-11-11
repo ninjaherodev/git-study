@@ -1,5 +1,38 @@
 # Preparar certificación de Git 🤖
 
+# Git pull
+
+git pull es el comando que se utiliza para actualizar tu repositorio local con los cambios más recientes que hayan sido publicados en el repositorio remoto, fusionándolos automáticamente en tu rama actual. Esencialmente, combina dos comandos: git fetch (que descarga los cambios) y git merge (que los integra a tu rama activa). Esto te permite mantener tu trabajo en sincronía con el progreso de otros colaboradores o con actualizaciones externas.
+
+```bash
+  git pull origin main
+```
+# Git push
+
+git push es el comando que utilizas para subir tus cambios locales al repositorio remoto en la misma rama o en una rama específica. Esto permite que otros colaboradores puedan acceder a tu trabajo y continuar construyendo sobre él. git push solo sube los cambios que hayas confirmado (con git commit) a tu repositorio local, y no afecta directamente el trabajo de otros hasta que ellos actualicen sus propios repositorios con git pull.
+
+```bash
+  git push origin feature-branch
+```
+Nota: La primera vez que subes una nueva rama, es útil utilizar el flag -u (upstream) con el comando git push, como en git push -u origin feature-branch. Esto establece la rama remota como la predeterminada para futuras actualizaciones, facilitando los siguientes git push o git pull.
+
+# Git Fetch
+
+git fetch es un comando que se usa para descargar todos los cambios del repositorio remoto, pero sin integrarlos en tu rama actual. Este comando solo actualiza las referencias de las ramas remotas, permitiéndote revisar qué cambios existen antes de aplicarlos en tu propio trabajo. Esto es útil si prefieres inspeccionar los cambios y decidir cuándo y cómo fusionarlos en tu rama.
+
+```bash
+ git fetch origin
+```
+Nota: Después de ejecutar git fetch, puedes ver los cambios descargados utilizando comandos como git log origin/main. Si decides integrarlos, puedes utilizar git merge origin/main o, si quieres actualizaciones completas, git pull.
+
+```bash
+ # ver los commits que estan en remoto que no tengo en mi local
+ git log HEAD..origin/main
+ git log main..origin/main
+
+ #ver el codigo que esta en remoto y no esta integrado en mi local
+ gut diff HEAD..origin/main
+```
 
 # Tipos de Fusion
 
