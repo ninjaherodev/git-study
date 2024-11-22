@@ -138,7 +138,7 @@ historial lineal. Esto es útil para integrar cambios y mantener un historial li
 
 ## Rebase vs Merge
 
-recomiendo que si estas en una rama que no esta compartida en remoto y solo es de uso personal realizar esa 
+Recomiendo que si estas en una rama que no esta compartida en remoto y solo es de uso personal realizar esa 
 sincronización con la rama main con un rebase.
 
 ```bash
@@ -146,7 +146,7 @@ sincronización con la rama main con un rebase.
  git rebase main|
 ```
 
-pero si estas en una rama que tiene varios colaboradores o la rama principal (main, master)
+Pero si estas en una rama que tiene varios colaboradores o la rama principal (main, master)
 realizar un merge y que se cree ese commit de fusión.
 
 ```bash
