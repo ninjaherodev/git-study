@@ -134,16 +134,22 @@ historial lineal. Esto es útil para integrar cambios y mantener un historial li
   git rebase --abort
   # si a habia subido mi rama al remoto y hago rebase para volverla a subir a remoto ya que se requiere forzar para sobreescribir el historial remoto 
   git push --force-with-lease
+```
 
+## Rebase vs Merge
 
-gitGraph
-   commit
-   commit
-   branch develop
-   checkout develop
-   commit
-   commit
-   checkout main
-   merge develop
-   commit
-   commit
+recomiendo que si estas en una rama ue no esta compartida en remoto y solo es de uso personal realizar esa 
+sincronizacion con la rama main con un rebase.
+
+```bash
+ git checkout feature
+ git rebase main|
+```
+
+pero si estas en una rama que tiene varios colaboradores o la rama principal (main, master)
+realizar un merge y que se cree ese commit de fusion.
+
+```bash
+ git checkout main
+ git merge feature
+```
